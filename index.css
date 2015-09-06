@@ -1,0 +1,43 @@
+body{
+    width: 250px;
+    height: 250px;
+}
+
+h1,h2{
+    margin:0px;
+}
+.widget-wrapper{
+    /*background: #4abf3a;*/
+}
+
+.aligner{
+    display: flex;
+    align-items: center;
+    /*min-height: 24em;*/
+    justify-content: center;
+    height: 100%;
+}
+
+.widget{
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+    width: 80%;
+    max-width: 80%;
+}
+
+header{
+    margin: 5px 0px;
+}
+
+#quote-content{
+    max-height: 30%;
+    overflow: hidden;
+    margin: 5px 0px;
+    /*text-overflow: ellipsis;*/
+}
+
+footer{
+    margin: 5px 0px;
+}
