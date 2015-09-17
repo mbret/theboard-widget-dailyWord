@@ -1,77 +1,65 @@
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/flexboxgrid/6.2.0/flexboxgrid.min.css" >
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+        <link rel="stylesheet" href="index.css">
+    </head>
 
-<head>
+    <body class="navy-bg">
 
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <div class="widget height-max">
+            <div class="row middle-xs center-xs height-max" id="widget-daily-word">
 
-    <!-- Include the possible widget default style -->
-    <link rel="stylesheet" href="/widgets-framework/style.css">
+                <div class="col-xs-10">
+                    <div class="box">
+                        <article class="vcenter">
 
-    <link rel="stylesheet" href="index.css">
+                            <header>
+                                <h2 id="widget-title"></h2>
+                            </header>
 
-</head>
+                            <div id="widget-content-loading" style="display: none">
+                                Content is loading
+                            </div>
+                            <div id="widget-content" class="text-justify"></div>
 
-<body class="widget-theme-green">
+                            <footer></footer>
 
-<!--
-    Widget declaration
-    You can make everything you want but you can also follow basic pattern
-    A predefined style is possible when using special class.
-    It's advised to design a default widget with empty element and fill it later with .js
--->
-<div class="widget-wrapper">
-
-    <div class="aligner">
-
-        <div class="widget" id="widget-daily-word">
-
-            <header class="widget-header">
-                <h1>test</h1>
-            </header>
-
-            <div class="widget-content">
-
-                <div id="content-loading">
-                    Content is loading
-                </div>
-
-                <div id="content-loaded">
-                    <h2 id="quote-title"></h2>
-                    <div id="quote-content"></div>
+                        </article>
+                    </div>
                 </div>
 
             </div>
-
-            <footer class="widget-footer">
-
-                <!-- May be useful to indicate the last widget refresh -->
-                <div class="widget-updated"></div>
-            </footer>
         </div>
 
-    </div>
 
-</div>
+        <!-- Include the required widget library -->
+        <script src="https://rawgit.com/mbret/theboard-library-widget/master/dist/library.min.js"></script>
 
-<!-- Include the required widget library -->
-<script src="/widgets-framework/production.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
-<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<!-- Script for RSS Feeds -->
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script src="index.js"></script>
+        <!-- Script for RSS Feeds -->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-<script>
-    theBoardModule.start({
-        widget: {
-            configuration: {
-                identity: 'Daily Word',
+        <script src="index.js"></script>
+
+        <script>
+            if(!theBoardModule.isOnBoard){
+                theBoardModule.start();
             }
-        }
-    });
-</script>
+            else{
+                theBoardModule.start({
+                    widget: {
+                        configuration: {
+                            identity: 'Daily Word',
+                        }
+                    }
+                });
+            }
+        </script>
 
-</body>
-
+    </body>
 </html>
 

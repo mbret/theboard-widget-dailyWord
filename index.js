@@ -69,9 +69,8 @@
             this.getDailyQuote()
                 .then(function(data){
                     console.log(data);
-                    $('#quote-title').html(data.title);
-                    $('#quote-content').html(data.content);
-                    $('.widget-updated').html('Updated: ' + new Date().toISOString());
+                    $('#widget-title').html(data.title);
+                    $('#widget-content').html(data.content);
                     $('#content-loading').hide();
                 });
         },
